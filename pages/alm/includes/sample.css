@@ -1,0 +1,86 @@
+
+div.sample_popup { z-index: 125; }
+
+div.sample_popup div.menu_form_header{
+	border: 0px solid black;
+	border-bottom: none;
+	width: 300px;
+	height: 20px;
+	line-height: 19px;
+	vertical-align: middle;	
+	background: url('aviso-form-header.png') no-repeat;
+	text-decoration: none;
+	font-family: arial;
+	font-weight: bold;
+	font-size:  13px;
+	color:   #000000;
+	cursor:  default;
+}
+
+div.sample_popup div.menu_form_body{
+	width: 300px;
+	border: 0px solid black;
+	background: url('aviso-form-back.png') no-repeat left bottom;
+	background-position:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #000000;
+	font-weight: 500;
+}
+
+div.sample_popup div.menu_form_body_red{
+	width: 300px;
+	border: 0px solid black;
+	background: url('alert.gif') no-repeat left bottom;
+	background-position:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #000000;
+	font-weight: 500;
+}
+
+
+div.sample_popup img.menu_form_exit{
+	float:  right;
+	margin: 4px 5px 0px 0px;
+	cursor: pointer;
+}
+
+div.sample_popup table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+div.sample_popup th{
+	width: 1%;
+	padding: 0px 5px 1px 0px;
+	text-align: left;
+	font-family: arial;
+	font-weight: 900;
+	font-size:  13px;
+	color:   #000000;
+}
+
+div.sample_popup td{	
+	padding: 0px 0px 1px 0px;
+}
+
+div.sample_popup form{
+	margin:  0px;
+	padding: 8px 10px 10px 10px;
+}
+
+div.sample_popup input.field{
+	width: 95%;
+  	border: 1px solid #808080;
+  	font-family: Arial;
+  	font-size: 12px;
+}
+
+div.sample_popup input.btn{
+	margin-top: 2px;
+ 	border: 1px solid #808080;
+	background-color: #DDFFDD;
+	font-family: Arial;
+	font-size: 11px;
+}

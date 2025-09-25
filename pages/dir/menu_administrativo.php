@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<Sistema de Gestion Empresarial, Produccion y Operacion
+
+html xmlns="http://www.w3.org/1999/xhtml">
+
+<?php
+	//Comprobar que la sesion aun sigue abierta
+	include ("../seguridad.php"); 
+	//Comprobar que el usuario registrado tenga acceso a esta seccion del Módulo de Desarrollo
+	//if(!verificarPermiso($usr_reg,$_SERVER['PHP_SELF'])){		
+		//Enviar a la pagina de acceso negado
+	//	echo "<meta http-equiv='refresh' content='0;url=error.php?err=AccesoNegado'>";
+	//}
+	//else{
+		//Este archivo proporciona todo el encabezado de las paginas y la conexion a la BD a traves del archivo conexion.inc y da acceso al archivo op_operacionesBD.php
+		include ("head_menu.php");?>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Sistema de Gesti&oacute;n Empresarial, Producci&oacute;n y Operaci&oacute;n</title>
+
+	<link rel="stylesheet" type="text/css" href="includes/estiloGerencia.css" />
+
+    <style type="text/css">
+		<!--
+		#parrilla-menu1 { position:absolute; left:70px; top:160px; width:892px; height:229px;	z-index:1; }
+		-->
+    </style>
+</head>
+<body onfocus="borrarHistorial()">
+	<div id="parrilla-menu1">
+  	<table class="tabla_frm" width="80%" border="0" align="center" cellpadding="5" cellspacing="5">
+    	<tr>
+      		<td width="50%" align="center">
+	    		<div align="center">
+				<form action="submenu_almacen.php">
+					<input type="image" src="images/logo-dir-alm.png" name="icon1" id="icon1" width="200" height="200" border="0" title="M&oacute;dulo de Almac&eacute;n" 
+					onclick="MM_nbGroup('down','group1','icon1','',1)" onmouseover="MM_nbGroup('over','icon1','images/dir-alm-over.png','',1);window.status='';return true"  onmouseout="MM_nbGroup('out')"/>
+	    		</form>
+    		  </div>
+			</td>
+      		<td width="50%" align="center">
+	    		<div align="center">
+				<form action="submenu_compras.php">
+					<input type="image" src="images/logo-dir-com.png" name="icon2" id="icon2" width="200" height="200" border="0" title="M&oacute;dulo de Compras" 
+					onclick="MM_nbGroup('down','group1','icon2','',1)" onmouseover="MM_nbGroup('over','icon2','images/dir-com-over.png','',1);window.status='';return true"  onmouseout="MM_nbGroup('out')"/>
+	    		</form>
+	 		  </div>
+	  		</td>
+		</tr>
+	</table>
+	<br /><br />
+	<table class="tabla_frm" width="100%" border="0" align="center" cellpadding="5" cellspacing="5">
+		<tr>
+			<td width="33%" align="center">
+	    		<div align="center">
+				<form action="submenu_recursos.php">
+					<input type="image" src="images/logo-dir-rec.png" name="icon3" id="icon3" width="200" height="200" border="0" title="M&oacute;dulo de Recuros Humanos" 
+					onclick="MM_nbGroup('down','group1','icon3','',1)" onmouseover="MM_nbGroup('over','icon3','images/dir-rec-over.png','',1);window.status='';return true"  onmouseout="MM_nbGroup('out')"/>
+	    		</form>
+	 		  </div>
+	  		</td>
+			<td width="33%" align="center">
+	    		<div align="center">
+				<form action="submenu_seguridad.php">
+					<input type="image" src="images/logo-dir-seg.png" name="icon4" id="icon4" width="200" height="200" border="0" title="M&oacute;dulo de Seguridad" 
+					onclick="MM_nbGroup('down','group1','icon4','',1)" onmouseover="MM_nbGroup('over','icon4','images/dir-seg-over.png','',1);window.status='';return true"  onmouseout="MM_nbGroup('out')"/>
+	    		</form>
+	 		  </div>
+	  		</td>
+			<!--
+			<td width="33%" align="center">
+	    		<div align="center">
+				<form action="#">
+					<input type="image" src="images/logo-dir-ase.png" name="icon5" id="icon5" width="200" height="200" border="0" title="M&oacute;dulo de Calidad" 
+					onclick="MM_nbGroup('down','group1','icon5','',1)" onmouseover="MM_nbGroup('over','icon5','images/dir-ase-over.png','',1);window.status='';return true"  onmouseout="MM_nbGroup('out')"/>
+	    		</form>
+	 		  </div>
+	  		</td>
+			-->
+    	</tr>
+  	</table>
+</div>
+</body>
+<?php //}//Cierre del Else donde se comprueba el usuario que esta registrado ?>
+</html>

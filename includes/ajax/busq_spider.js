@@ -1,0 +1,39 @@
+/**
+  * Nombre del Módulo: Compras                                               
+  * ®Concreto Lanzado de Fresnillo S.A. de C.V.
+  * Fecha: 26/Noviembre/2010                                      			
+  * Descripción: Este archivo contiene las funciones para obtener las sugerencias de la BD, cuando el usuario esta buscando un dato en particular
+  */
+
+
+/*Esta función recoje los datos necesarios para realizar la opetición al servidor y buscar los datos de acuerdo al texto ingresado por el usuario*/
+function lookup(cajaTexto,nomBd,nomTabla,nomCampo,num) {
+	//Guardar el numero del Layer que despliega los resultados
+	//Obtener el dato a buscar
+	var inputString = cajaTexto.value;	
+	if(inputString.length == 0) {
+		//Si el dato a buscar esta vacío, no mostrar el mensaje de sugerencias
+		$('#suggestions'+num).hide();
+	} 
+	else{
+		//Obtener el nombre de la caja de texto que contendrá el valor seleccionado
+		var nomCajaTexto = cajaTexto.name;
+		//Enviar la petición al servidor para realziar la consulta de los datos que serán mostrados en el Layer de sugerencias
+		$.post("../../includes/ajax/busq_spider.php?nomCajaTexto="+nomCajaTexto+"&nomBd="+nomBd+"&nomTabla="+nomTabla+"&nomCampo="+nomCampo+"&num="+num, {queryString: ""+inputString+""}, function(data){
+			//Si los datos obtenidos son mayores que 0, entonces desplegar el Layer con las sugerencias
+			if(data.length >0) {
+				$('#suggestions'+num).show();
+				$('#autoSuggestionsList'+num).html(data);
+			}
+		});
+	}
+}//Fin de la funcion lookup(cajaTexto,nomTabla,nomCampo,num)
+	
+	
+/*Esta función se encarga de asignar el valor seleccionado a la caja de texto correspondiente*/	
+function fill(nomCampo,thisValue,num) {
+	//Asignar el valor seleccionado a la caja de texto correspondiente
+	$('#'+nomCampo).val(thisValue);
+	//Ocultar el layer que muestra las sugerencias
+	$('#suggestions'+num).hide();
+}
